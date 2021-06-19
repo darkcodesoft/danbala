@@ -1,0 +1,16 @@
+{
+  "name": "danbala",
+  "version": "1.0.0",
+  "description": "Ezili OS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://storm2910@bitbucket.org/storm2910/danbala.git"
+  },
+  "author": "teddy.mouse@icloud.com",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/storm2910/danbala#readme"
+}
