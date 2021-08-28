@@ -16,7 +16,7 @@ export default class WebSocketServer {
     /**
      * static instance
      */
-    private static instance?:WebSocketServer|null = null
+    private static instance?: WebSocketServer|null = null
 
     /**
      *

@@ -16,7 +16,7 @@ export default class Server {
   /**
    * static isntance item
    */
-  private static instance?:Server|null = null
+  private static instance?: Server|null = null
   private port = 3001
   private ports: number[] = []
   private cookieSecret: string
@@ -88,7 +88,7 @@ export default class Server {
    * @param number port
    * @return void
    */
-  public setPort (port:number): void {
+  public setPort (port: number): void {
     if (this.portIsValid(port)) {
       this.port = port;
       this.ports.push(port);
@@ -124,7 +124,7 @@ export default class Server {
    * @returns {boolean}
    * @memberof Server
    */
-  private portIsValid (port:number): boolean {
+  private portIsValid (port: number): boolean {
     const min = 1;
     const max = 65535;
     const num = +port;

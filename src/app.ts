@@ -12,12 +12,12 @@ export default class App {
   /**
    * static instance
    */
-  private static instance?:App|null = null;
+  private static instance?: App|null = null;
 
   /**
    * server object
    */
-  public server:Server
+  public server: Server
 
   /**
    *
@@ -54,12 +54,12 @@ export default class App {
 
     // HTTP errors handlers
     // 404
-    this.server.router.use((req:express.Request, res: express.Response, next:express.NextFunction) => {
+    this.server.router.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
       next(createError(404));
     });
 
     // 500s
-    this.server.router.use((err:HttpError, req:express.Request, res:express.Response, next:express.NextFunction) => {
+    this.server.router.use((err: HttpError, req: express.Request, res: express.Response, next: express.NextFunction) => {
       res.locals.message = err.message;
       res.locals.error = req.app.get('env') === 'development' ? err : {};
     });
