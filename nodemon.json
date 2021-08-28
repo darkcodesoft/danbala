@@ -11,6 +11,6 @@
       "addons",
       "public"
   ],
-  "exec": "npm run lint && ts-node ./src/app.ts",
+  "exec": "npm run lint && ts-node ./index.ts",
   "ext": "ts"
 }

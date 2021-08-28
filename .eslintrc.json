@@ -7,5 +7,20 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended"
-  ]
+  ],
+  "ignorePatterns": ["node_modules/", ".coverage/"],
+  "rules": {
+    "no-console": 0,
+    "no-use-before-define": 0,
+    "camelcase": "off", 
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/naming-convention": 0,
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "semi": ["error", "always"],
+    "@typescript-eslint/no-unused-vars": ["error", {
+      "vars": "all",
+      "args": "none"
+    }]
+  }
 }
