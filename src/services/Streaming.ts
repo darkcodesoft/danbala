@@ -151,7 +151,7 @@ export class Query {
    *
    * @returns {StreamingQuery}
    */
-  public buildQuery (): Param {
+  public build (): Param {
     const query: Param = {
       country: this.country,
       services: this.services,
@@ -213,10 +213,11 @@ export class Query {
    * @returns {AxiosPromise}
    */
   public search (): AxiosPromise {
+    const params: Param = this.build();
     const config: AxiosRequestConfig = {
       method: Method.GET,
       url: `https://${process.env.RAPID_API_HOST}/search/ultra`,
-      params: this.buildQuery(),
+      params,
       headers: {
         'x-rapidapi-host': process.env.RAPID_API_HOST,
         'x-rapidapi-key': process.env.RAPID_API_KEY,
