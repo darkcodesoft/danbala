@@ -54,7 +54,7 @@ export async function socket (req: express.Request, res: express.Response): Prom
 export async function streaming (req: express.Request, res: express.Response): Promise<void> {
   const query = new StreamingQuery();
   query.services = StreamingService.HBO;
-  query.search().then((response: AxiosResponse) => {
+  query.fetch().then((response: AxiosResponse) => {
     res.json(response.data);
   }).catch((error: AxiosError) => {
     res.send(error.toJSON());

@@ -212,7 +212,7 @@ export class Query {
    *
    * @returns {AxiosPromise}
    */
-  public search (): AxiosPromise {
+  public fetch (): AxiosPromise {
     const params: Param = this.build();
     const config: AxiosRequestConfig = {
       method: Method.GET,
