@@ -1,6 +1,6 @@
 import {AxiosError, AxiosResponse} from 'axios';
 import express from 'express';
-import {Query as StreamingQuery, Service as StreamingService} from '../services/Streaming';
+import {Order, Query as StreamingQuery, Service as StreamingService} from '../services/Streaming';
 import Socket from '../socket';
 
 /**
@@ -12,7 +12,7 @@ import Socket from '../socket';
  * @returns {Promise<void>}
  */
 export async function index (req: express.Request, res: express.Response): Promise<void> {
-  res.send({
+  res.json({
     "app": "Danbala"
   });
 }
@@ -26,7 +26,7 @@ export async function index (req: express.Request, res: express.Response): Promi
  * @returns {Promise<void>}
  */
 export async function user (req: express.Request, res: express.Response): Promise<void> {
-  res.send({
+  res.json({
     "first": "Teddy",
     "last": "Moussignac"
   });
@@ -53,7 +53,9 @@ export async function socket (req: express.Request, res: express.Response): Prom
  */
 export async function streaming (req: express.Request, res: express.Response): Promise<void> {
   const query = new StreamingQuery();
-  query.services = StreamingService.HBO;
+  query.services = [StreamingService.APPLE];
+  query.order = Order.YEAR;
+  query.desc = "true";
   query.fetch().then((response: AxiosResponse) => {
     res.json(response.data);
   }).catch((error: AxiosError) => {

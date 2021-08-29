@@ -131,13 +131,13 @@ export const Genres: {[key: string]: string} = {
  */
 export class Query {
   public country  = Country.US
-  public services = Service.NETFLIX
+  public services = [Service.NETFLIX]
   public type = Type.MOVIE
   public order = Order.RATING
   public minYear: string|null = null
   public maxYear: string|null = null
   public page: string|null = null
-  public genres: string|null = null
+  public genres: string[]|null = null
   public genresRelation: string|null = null
   public desc: string|null = null
   public language: string|null = null
@@ -154,7 +154,7 @@ export class Query {
   public build (): Param {
     const query: Param = {
       country: this.country,
-      services: this.services,
+      services: this.services.join(','),
       type: this.type,
       order_by: this.order
     };
@@ -172,7 +172,7 @@ export class Query {
     }
 
     if (this.genres) {
-      query.genres = this.genres;
+      query.genres = this.genres.join(',');
     }
 
     if (this.genresRelation) {
@@ -226,4 +226,56 @@ export class Query {
 
     return axios.request(config);
   }
+}
+
+/**
+ *
+ *
+ * Stream object schedule
+ *
+ * @class {Schedule}
+ */
+export class Schedule {
+  public added = 0;
+  public leaving = 0;
+  public link = '';
+}
+
+/**
+ *
+ *
+ */
+export class Info {
+  [service: string]: { [country: string]: Schedule };
+}
+
+/**
+ *
+ *
+ * Stream object definition
+ *
+ * @class {Stream}
+ */
+export class StreamObject {
+  public age = 0; // shared
+  public backdropPath = ''; // own
+  public backdropURLs: {[key: string]: string} = {}; // own
+  public cast: string[] = []; // shared
+  public countries: string[] = []; // shared
+  public genres: number[] = []; // shared
+  public imdbID = ""; // private
+  public imdbRating = 0; // private
+  public imdbVoteCount = 0; // private
+  public originalTitle = ''; // private
+  public overview = ''; // private
+  public posterPath = ''; // private
+  public posterURLs: {[size: string]: string} = {}; // private
+  public runtime = 0; // private
+  public significants: string[] = []; // shared
+  public streamingInfo: Info = {}; // shared
+  public tagline = ''; // private
+  public title = ''; // private
+  public tmdbID = ''; // private
+  public video = ''; // private
+  public year = ''; // shared
 }
