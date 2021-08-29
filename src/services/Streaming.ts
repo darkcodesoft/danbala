@@ -92,7 +92,7 @@ export enum Order {
  *
  * Lists of genres
  */
-export const GenresObject: {[key: string]: string} = {
+export const Genres: {[key: string]: string} = {
   "Biography": "1",
   "Film Noir": "2",
   "Game Show": "3",
