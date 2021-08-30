@@ -263,7 +263,7 @@ export class StreamObject {
   public cast: string[] = []; // shared
   public countries: string[] = []; // shared
   public genres: number[] = []; // shared
-  public imdbID = ""; // private
+  public imdbID = ''; // private
   public imdbRating = 0; // private
   public imdbVoteCount = 0; // private
   public originalTitle = ''; // private

@@ -13,7 +13,7 @@ import Socket from '../socket';
  */
 export async function index (req: express.Request, res: express.Response): Promise<void> {
   res.json({
-    "app": "Danbala"
+    'app': 'Danbala'
   });
 }
 
@@ -27,8 +27,8 @@ export async function index (req: express.Request, res: express.Response): Promi
  */
 export async function user (req: express.Request, res: express.Response): Promise<void> {
   res.json({
-    "first": "Teddy",
-    "last": "Moussignac"
+    'first': 'Teddy',
+    'last': 'Moussignac'
   });
 }
 
@@ -55,7 +55,7 @@ export async function streaming (req: express.Request, res: express.Response): P
   const query = new StreamingQuery();
   query.services = [StreamingService.APPLE];
   query.order = Order.YEAR;
-  query.desc = "true";
+  query.desc = 'true';
   query.fetch().then((response: AxiosResponse) => {
     res.json(response.data);
   }).catch((error: AxiosError) => {
