@@ -259,7 +259,7 @@ export class Info {
 export class StreamObject {
   public age = 0; // shared
   public backdropPath = ''; // own
-  public backdropURLs: {[key: string]: string} = {}; // own
+  public backdropURLs: { [size: string]: string } = {}; // own
   public cast: string[] = []; // shared
   public countries: string[] = []; // shared
   public genres: number[] = []; // shared
@@ -269,7 +269,7 @@ export class StreamObject {
   public originalTitle = ''; // private
   public overview = ''; // private
   public posterPath = ''; // private
-  public posterURLs: {[size: string]: string} = {}; // private
+  public posterURLs: { [size: string]: string } = {}; // private
   public runtime = 0; // private
   public significants: string[] = []; // shared
   public streamingInfo: Info = {}; // shared
