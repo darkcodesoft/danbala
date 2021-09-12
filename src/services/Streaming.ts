@@ -151,7 +151,7 @@ export class Query {
    *
    * @returns {StreamingQuery}
    */
-  public build (): Param {
+  private build (): Param {
     const query: Param = {
       country: this.country,
       services: this.services.join(','),
@@ -236,9 +236,9 @@ export class Query {
  * @class {Schedule}
  */
 export class Schedule {
-  public added = 0;
-  public leaving = 0;
-  public link = '';
+  public added = 0
+  public leaving = 0
+  public link = ''
 }
 
 /**
@@ -257,25 +257,25 @@ export class Info {
  * @class {Stream}
  */
 export class StreamObject {
-  public age = 0; // shared
-  public backdropPath = ''; // own
-  public backdropURLs: { [size: string]: string } = {}; // own
-  public cast: string[] = []; // shared
-  public countries: string[] = []; // shared
-  public genres: number[] = []; // shared
-  public imdbID = ''; // private
-  public imdbRating = 0; // private
-  public imdbVoteCount = 0; // private
-  public originalTitle = ''; // private
-  public overview = ''; // private
-  public posterPath = ''; // private
-  public posterURLs: { [size: string]: string } = {}; // private
-  public runtime = 0; // private
-  public significants: string[] = []; // shared
-  public streamingInfo: Info = {}; // shared
-  public tagline = ''; // private
-  public title = ''; // private
-  public tmdbID = ''; // private
-  public video = ''; // private
-  public year = ''; // shared
+  public age = 0 // shared
+  public backdropPath = '' // own
+  public backdropURLs: { [size: string]: string } = {} // own
+  public cast: string[] = [] // shared
+  public countries: string[] = [] // shared
+  public genres: number[] = [] // shared
+  public imdbID = '' // private
+  public imdbRating = 0 // private
+  public imdbVoteCount = 0 // private
+  public originalTitle = '' // private
+  public overview = '' // private
+  public posterPath = '' // private
+  public posterURLs: { [size: string]: string } = {} // private
+  public runtime = 0 // private
+  public significants: string[] = [] // shared
+  public streamingInfo: Info = {} // shared
+  public tagline = '' // private
+  public title = '' // private
+  public tmdbID = '' // private
+  public video = '' // private
+  public year = '' // shared
 }
