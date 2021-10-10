@@ -63,21 +63,30 @@ export default class Server {
    * @returns void
    */
   private setupMiddleWares (): void {
+    // add cors
     this.process.use(this.corsSetup());
+
     // add http logger
     this.process.use(logger('dev'));
+
     // add json
     this.process.use(express.json());
+
     // add urlencoder
     this.process.use(express.urlencoded({ extended: false }));
+
     // add coockie parser
     this.process.use(cookieParser(this.cookieSecret));
+
     // setup public directory
     this.process.use(express.static(path.join(process.cwd(), 'public')));
+
     // hide x-powered-by
     this.process.disable('x-powered-by');
+
     // setup views directory
     this.process.set('views', path.join(process.cwd(), 'views'));
+
     // setup view engine
     this.process.set('view engine', 'pug');
   }
